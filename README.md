@@ -1,4 +1,4 @@
-# 📚 Sistema de Gestão de Biblioteca - InovCorp Library
+# 📚 Sistema de Gestão de Biblioteca - BookStore
 
 Sistema completo de gestão de biblioteca desenvolvido com Laravel, oferecendo funcionalidades modernas para administração de livros, requisições, devoluções, avaliações, e-commerce e muito mais.
 
