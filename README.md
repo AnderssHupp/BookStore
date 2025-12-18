@@ -19,7 +19,7 @@ Sistema completo de gestão de biblioteca desenvolvido com Laravel, oferecendo f
 
 ## 🎯 Sobre o Projeto
 
-O **BookStore ** é um sistema completo de gestão de biblioteca que permite:
+O **BookStore** é um sistema completo de gestão de biblioteca que permite:
 
 -   **Gestão de Acervo**: Administração completa de livros, autores e editoras
 -   **Sistema de Requisições**: Usuários podem solicitar livros para empréstimo
