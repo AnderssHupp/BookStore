@@ -1,210 +1,214 @@
-# 📚 Sistema de Gestão de Biblioteca - InovCorp Library
+# 📚 Sistema de Gestão de Biblioteca - BookStore
 
 Sistema completo de gestão de biblioteca desenvolvido com Laravel, oferecendo funcionalidades modernas para administração de livros, requisições, devoluções, avaliações, e-commerce e muito mais.
 
 ## 📋 Índice
 
-- [Sobre o Projeto](#sobre-o-projeto)
-- [Tecnologias Utilizadas](#tecnologias-utilizadas)
-- [Funcionalidades](#funcionalidades)
-- [Estrutura do Projeto](#estrutura-do-projeto)
-- [Requisitos](#requisitos)
-- [Instalação](#instalação)
-- [Configuração](#configuração)
-- [Uso](#uso)
-- [Estrutura de Banco de Dados](#estrutura-de-banco-de-dados)
-- [Testes](#testes)
-- [Contribuindo](#contribuindo)
-- [Licença](#licença)
+-   [Sobre o Projeto](#sobre-o-projeto)
+-   [Tecnologias Utilizadas](#tecnologias-utilizadas)
+-   [Funcionalidades](#funcionalidades)
+-   [Estrutura do Projeto](#estrutura-do-projeto)
+-   [Requisitos](#requisitos)
+-   [Instalação](#instalação)
+-   [Configuração](#configuração)
+-   [Uso](#uso)
+-   [Estrutura de Banco de Dados](#estrutura-de-banco-de-dados)
+-   [Testes](#testes)
+-   [Contribuindo](#contribuindo)
+-   [Licença](#licença)
 
 ## 🎯 Sobre o Projeto
 
-O **InovCorp Library** é um sistema completo de gestão de biblioteca que permite:
+O **BookStore ** é um sistema completo de gestão de biblioteca que permite:
 
-- **Gestão de Acervo**: Administração completa de livros, autores e editoras
-- **Sistema de Requisições**: Usuários podem solicitar livros para empréstimo
-- **Gestão de Devoluções**: Controle completo de devoluções com verificação de estado
-- **Sistema de Multas**: Cálculo automático de multas por atraso, danos ou perda
-- **Avaliações**: Sistema de reviews moderado para livros
-- **E-commerce**: Compra de livros com carrinho e checkout
-- **Notificações**: Sistema completo de notificações por email
-- **Exportação de Dados**: Exportação para Excel de livros, autores, editoras e usuários
-- **Logs de Atividade**: Rastreamento completo de ações do sistema
+-   **Gestão de Acervo**: Administração completa de livros, autores e editoras
+-   **Sistema de Requisições**: Usuários podem solicitar livros para empréstimo
+-   **Gestão de Devoluções**: Controle completo de devoluções com verificação de estado
+-   **Sistema de Multas**: Cálculo automático de multas por atraso, danos ou perda
+-   **Avaliações**: Sistema de reviews moderado para livros
+-   **E-commerce**: Compra de livros com carrinho e checkout
+-   **Notificações**: Sistema completo de notificações por email
+-   **Exportação de Dados**: Exportação para Excel de livros, autores, editoras e usuários
+-   **Logs de Atividade**: Rastreamento completo de ações do sistema
 
 ## 🛠 Tecnologias Utilizadas
 
 ### Backend
-- **Laravel 12** - Framework PHP moderno
-- **PHP 8.2+** - Linguagem de programação
-- **Laravel Jetstream** - Autenticação e gestão de perfis
-- **Laravel Fortify** - Autenticação robusta
-- **Laravel Sanctum** - API Authentication
-- **Laravel Livewire** - Componentes interativos
-- **Stripe** - Gateway de pagamento
-- **Maatwebsite Excel** - Exportação de dados
-- **DomPDF** - Geração de PDFs (faturas)
+
+-   **Laravel 12** - Framework PHP moderno
+-   **PHP 8.2+** - Linguagem de programação
+-   **Laravel Jetstream** - Autenticação e gestão de perfis
+-   **Laravel Fortify** - Autenticação robusta
+-   **Laravel Sanctum** - API Authentication
+-   **Laravel Livewire** - Componentes interativos
+-   **Stripe** - Gateway de pagamento
+-   **Maatwebsite Excel** - Exportação de dados
+-   **DomPDF** - Geração de PDFs (faturas)
 
 ### Frontend
-- **Tailwind CSS** - Framework CSS utilitário
-- **DaisyUI** - Componentes para Tailwind
-- **Vite** - Build tool moderna
-- **Swiper** - Carrossel de imagens
-- **Alpine.js** - Framework JavaScript leve (via Jetstream)
+
+-   **Tailwind CSS** - Framework CSS utilitário
+-   **DaisyUI** - Componentes para Tailwind
+-   **Vite** - Build tool moderna
+-   **Swiper** - Carrossel de imagens
+-   **Alpine.js** - Framework JavaScript leve (via Jetstream)
 
 ### Banco de Dados
-- **SQLite** (desenvolvimento) / **MySQL/PostgreSQL** (produção)
+
+-   **SQLite** (desenvolvimento) / **MySQL/PostgreSQL** (produção)
 
 ### Ferramentas de Desenvolvimento
-- **Pest PHP** - Framework de testes
-- **PHPUnit** - Testes unitários
-- **Laravel Pint** - Code style fixer
-- **Laravel Pail** - Log viewer
+
+-   **Pest PHP** - Framework de testes
+-   **PHPUnit** - Testes unitários
+-   **Laravel Pint** - Code style fixer
+-   **Laravel Pail** - Log viewer
 
 ## ✨ Funcionalidades
 
 ### 👥 Gestão de Usuários
 
-- **Dois tipos de usuários**:
-  - **Admin**: Acesso completo ao sistema
-  - **Citizen**: Usuário comum da biblioteca
-- Autenticação com verificação de email
-- Perfis de usuário com foto
-- Autenticação de dois fatores (2FA)
+-   **Dois tipos de usuários**:
+    -   **Admin**: Acesso completo ao sistema
+    -   **Citizen**: Usuário comum da biblioteca
+-   Autenticação com verificação de email
+-   Perfis de usuário com foto
+-   Autenticação de dois fatores (2FA)
 
 ### 📖 Gestão de Livros
 
-- CRUD completo de livros
-- **Campos principais**:
-  - ISBN, Nome, Editora, Bibliografia (criptografada)
-  - Imagem de capa, Preço, Disponibilidade, Estoque
-- Relacionamento muitos-para-muitos com autores
-- **Busca avançada** por nome, ISBN, autor, editora
-- **Ordenação** por nome, autor, editora, preço
-- **Importação de livros** via Google Books API
-- **Livros relacionados** baseados em similaridade de conteúdo
-- **Avaliação média** calculada automaticamente
+-   CRUD completo de livros
+-   **Campos principais**:
+    -   ISBN, Nome, Editora, Bibliografia (criptografada)
+    -   Imagem de capa, Preço, Disponibilidade, Estoque
+-   Relacionamento muitos-para-muitos com autores
+-   **Busca avançada** por nome, ISBN, autor, editora
+-   **Ordenação** por nome, autor, editora, preço
+-   **Importação de livros** via Google Books API
+-   **Livros relacionados** baseados em similaridade de conteúdo
+-   **Avaliação média** calculada automaticamente
 
 ### 👨‍💼 Gestão de Autores
 
-- CRUD completo de autores
-- Foto do autor
-- Relacionamento com múltiplos livros
+-   CRUD completo de autores
+-   Foto do autor
+-   Relacionamento com múltiplos livros
 
 ### 🏢 Gestão de Editoras
 
-- CRUD completo de editoras
-- Logo da editora
-- Relacionamento com múltiplos livros
+-   CRUD completo de editoras
+-   Logo da editora
+-   Relacionamento com múltiplos livros
 
 ### 📝 Sistema de Requisições
 
-- Usuários podem solicitar livros para empréstimo
-- **Estados da requisição**:
-  - `pending` - Aguardando aprovação
-  - `approved` - Aprovada
-  - `rejected` - Rejeitada
-  - `pending_returned` - Aguardando confirmação de devolução
-  - `returned` - Devolvida
-  - `cancelled` - Cancelada
-- **Numeração automática**: REQ-000001, REQ-000002, etc.
-- **Limite de requisições**: Máximo de 3 requisições ativas por usuário
-- **Restrições**: Usuários com multas pendentes não podem fazer novas requisições
-- Upload de foto ao receber o livro
-- Data esperada de devolução
+-   Usuários podem solicitar livros para empréstimo
+-   **Estados da requisição**:
+    -   `pending` - Aguardando aprovação
+    -   `approved` - Aprovada
+    -   `rejected` - Rejeitada
+    -   `pending_returned` - Aguardando confirmação de devolução
+    -   `returned` - Devolvida
+    -   `cancelled` - Cancelada
+-   **Numeração automática**: REQ-000001, REQ-000002, etc.
+-   **Limite de requisições**: Máximo de 3 requisições ativas por usuário
+-   **Restrições**: Usuários com multas pendentes não podem fazer novas requisições
+-   Upload de foto ao receber o livro
+-   Data esperada de devolução
 
 ### 🔄 Sistema de Devoluções
 
-- Usuários podem solicitar devolução de livros
-- Upload de foto do estado do livro
-- **Verificação de estado**:
-  - `Good` - Bom estado
-  - `Bad` - Mau estado
-  - `Damaged` - Danificado
-  - `Lost` - Perdido
-- Aprovação/rejeição por administrador
-- Cálculo automático de multas baseado no estado
+-   Usuários podem solicitar devolução de livros
+-   Upload de foto do estado do livro
+-   **Verificação de estado**:
+    -   `Good` - Bom estado
+    -   `Bad` - Mau estado
+    -   `Damaged` - Danificado
+    -   `Lost` - Perdido
+-   Aprovação/rejeição por administrador
+-   Cálculo automático de multas baseado no estado
 
 ### 💰 Sistema de Multas
 
-- **Cálculo automático** de multas baseado em:
-  - **Atraso**: €1,00 por dia de atraso
-  - **Dano**: €5,00 fixo
-  - **Perda**: Valor do livro
-- Histórico completo de multas
-- Pagamento de multas
-- Bloqueio de novas requisições até quitação
+-   **Cálculo automático** de multas baseado em:
+    -   **Atraso**: €1,00 por dia de atraso
+    -   **Dano**: €5,00 fixo
+    -   **Perda**: Valor do livro
+-   Histórico completo de multas
+-   Pagamento de multas
+-   Bloqueio de novas requisições até quitação
 
 ### ⭐ Sistema de Avaliações
 
-- Usuários podem avaliar livros após devolução
-- **Sistema de moderação**:
-  - `pending` - Aguardando moderação
-  - `active` - Aprovada e visível
-  - `refused` - Rejeitada
-- Avaliação de 1 a 5 estrelas
-- Comentários opcionais
-- Notificações para administradores sobre novas avaliações
+-   Usuários podem avaliar livros após devolução
+-   **Sistema de moderação**:
+    -   `pending` - Aguardando moderação
+    -   `active` - Aprovada e visível
+    -   `refused` - Rejeitada
+-   Avaliação de 1 a 5 estrelas
+-   Comentários opcionais
+-   Notificações para administradores sobre novas avaliações
 
 ### 🛒 E-commerce
 
-- **Carrinho de compras**:
-  - Adicionar/remover livros
-  - Quantidade ajustável
-  - Cálculo automático de total
-- **Checkout**:
-  - Gestão de endereço de entrega
-  - Integração com Stripe para pagamentos
-  - Geração de faturas em PDF
-- **Pedidos**:
-  - Acompanhamento de status
-  - Histórico completo
-  - Cancelamento de pedidos
-- **Notificações de carrinho abandonado**
+-   **Carrinho de compras**:
+    -   Adicionar/remover livros
+    -   Quantidade ajustável
+    -   Cálculo automático de total
+-   **Checkout**:
+    -   Gestão de endereço de entrega
+    -   Integração com Stripe para pagamentos
+    -   Geração de faturas em PDF
+-   **Pedidos**:
+    -   Acompanhamento de status
+    -   Histórico completo
+    -   Cancelamento de pedidos
+-   **Notificações de carrinho abandonado**
 
 ### 🔔 Sistema de Notificações
 
-- **Tipos de notificações**:
-  - Confirmação de requisição
-  - Livro disponível (quando estava esgotado)
-  - Lembrete de devolução
-  - Nova avaliação (para admin)
-  - Aprovação/rejeição de avaliação
-  - Carrinho abandonado
-- Envio por email
-- Notificações em tempo real
+-   **Tipos de notificações**:
+    -   Confirmação de requisição
+    -   Livro disponível (quando estava esgotado)
+    -   Lembrete de devolução
+    -   Nova avaliação (para admin)
+    -   Aprovação/rejeição de avaliação
+    -   Carrinho abandonado
+-   Envio por email
+-   Notificações em tempo real
 
 ### 📊 Dashboard Administrativo
 
-- **Estatísticas**:
-  - Total de livros, autores, editoras
-  - Pedidos pendentes e pagos
-  - Gráficos mensais de pedidos
-- **Gestão rápida**:
-  - Requisições pendentes
-  - Devoluções pendentes
-  - Últimos pedidos
-  - Últimos livros adicionados
+-   **Estatísticas**:
+    -   Total de livros, autores, editoras
+    -   Pedidos pendentes e pagos
+    -   Gráficos mensais de pedidos
+-   **Gestão rápida**:
+    -   Requisições pendentes
+    -   Devoluções pendentes
+    -   Últimos pedidos
+    -   Últimos livros adicionados
 
 ### 📤 Exportação de Dados
 
-- Exportação para Excel de:
-  - Livros
-  - Autores
-  - Editoras
-  - Usuários
+-   Exportação para Excel de:
+    -   Livros
+    -   Autores
+    -   Editoras
+    -   Usuários
 
 ### 📋 Sistema de Logs
 
-- Rastreamento completo de atividades
-- Visualização de logs no dashboard
-- Histórico de ações do sistema
+-   Rastreamento completo de atividades
+-   Visualização de logs no dashboard
+-   Histórico de ações do sistema
 
 ### 🔍 Catálogo Público
 
-- Visualização pública de livros
-- Busca e filtros
-- Detalhes completos do livro
-- Avaliações aprovadas visíveis
+-   Visualização pública de livros
+-   Busca e filtros
+-   Detalhes completos do livro
+-   Avaliações aprovadas visíveis
 
 ## 📁 Estrutura do Projeto
 
@@ -250,21 +254,21 @@ library/
 
 ## 📋 Requisitos
 
-- **PHP**: 8.2 ou superior
-- **Composer**: 2.x
-- **Node.js**: 18.x ou superior
-- **NPM**: 9.x ou superior
-- **Banco de Dados**: SQLite (dev) / MySQL 8.0+ ou PostgreSQL 13+ (prod)
-- **Extensões PHP**:
-  - BCMath
-  - Ctype
-  - Fileinfo
-  - JSON
-  - Mbstring
-  - OpenSSL
-  - PDO
-  - Tokenizer
-  - XML
+-   **PHP**: 8.2 ou superior
+-   **Composer**: 2.x
+-   **Node.js**: 18.x ou superior
+-   **NPM**: 9.x ou superior
+-   **Banco de Dados**: SQLite (dev) / MySQL 8.0+ ou PostgreSQL 13+ (prod)
+-   **Extensões PHP**:
+    -   BCMath
+    -   Ctype
+    -   Fileinfo
+    -   JSON
+    -   Mbstring
+    -   OpenSSL
+    -   PDO
+    -   Tokenizer
+    -   XML
 
 ## 🚀 Instalação
 
@@ -413,15 +417,16 @@ composer dev
 ```
 
 Este comando inicia:
-- Servidor Laravel (porta 8000)
-- Worker de filas
-- Vite dev server
+
+-   Servidor Laravel (porta 8000)
+-   Worker de filas
+-   Vite dev server
 
 ### Acessar o sistema
 
-- **URL**: http://localhost:8000
-- **Dashboard Admin**: http://localhost:8000/dashboard
-- **Catálogo Público**: http://localhost:8000/catalog
+-   **URL**: http://localhost:8000
+-   **Dashboard Admin**: http://localhost:8000/dashboard
+-   **Catálogo Público**: http://localhost:8000/catalog
 
 ### Criar um usuário administrador
 
@@ -443,33 +448,33 @@ $user = \App\Models\User::create([
 
 ### Principais Tabelas
 
-- **users** - Usuários do sistema
-- **books** - Livros
-- **authors** - Autores
-- **publishers** - Editoras
-- **author_book** - Relacionamento muitos-para-muitos entre autores e livros
-- **book_requests** - Requisições de empréstimo
-- **fines** - Multas
-- **reviews** - Avaliações de livros
-- **book_notifications** - Notificações de disponibilidade
-- **carts** - Carrinhos de compra
-- **cart_items** - Itens do carrinho
-- **orders** - Pedidos
-- **order_items** - Itens do pedido
-- **logs** - Logs de atividade
+-   **users** - Usuários do sistema
+-   **books** - Livros
+-   **authors** - Autores
+-   **publishers** - Editoras
+-   **author_book** - Relacionamento muitos-para-muitos entre autores e livros
+-   **book_requests** - Requisições de empréstimo
+-   **fines** - Multas
+-   **reviews** - Avaliações de livros
+-   **book_notifications** - Notificações de disponibilidade
+-   **carts** - Carrinhos de compra
+-   **cart_items** - Itens do carrinho
+-   **orders** - Pedidos
+-   **order_items** - Itens do pedido
+-   **logs** - Logs de atividade
 
 ### Relacionamentos Principais
 
-- **Book** ↔ **Author** (Many-to-Many)
-- **Book** → **Publisher** (Many-to-One)
-- **User** → **BookRequest** (One-to-Many)
-- **BookRequest** → **Book** (Many-to-One)
-- **BookRequest** → **Fine** (One-to-Many)
-- **BookRequest** → **Review** (One-to-Many)
-- **User** → **Cart** (One-to-One)
-- **Cart** → **CartItem** (One-to-Many)
-- **User** → **Order** (One-to-Many)
-- **Order** → **OrderItem** (One-to-Many)
+-   **Book** ↔ **Author** (Many-to-Many)
+-   **Book** → **Publisher** (Many-to-One)
+-   **User** → **BookRequest** (One-to-Many)
+-   **BookRequest** → **Book** (Many-to-One)
+-   **BookRequest** → **Fine** (One-to-Many)
+-   **BookRequest** → **Review** (One-to-Many)
+-   **User** → **Cart** (One-to-One)
+-   **Cart** → **CartItem** (One-to-Many)
+-   **User** → **Order** (One-to-Many)
+-   **Order** → **OrderItem** (One-to-Many)
 
 ## 🧪 Testes
 
@@ -493,33 +498,33 @@ php artisan test --filter BookRequestTest
 
 ## 🔐 Segurança
 
-- **Criptografia**: Bibliografia dos livros é criptografada automaticamente
-- **Autenticação**: Laravel Fortify com 2FA
-- **Autorização**: Middleware de admin para rotas protegidas
-- **Sanitização**: Validação de inputs com Form Requests
-- **CSRF Protection**: Proteção CSRF em todas as rotas
-- **SQL Injection**: Protegido pelo Eloquent ORM
-- **XSS Protection**: Blade templates escapam automaticamente
+-   **Criptografia**: Bibliografia dos livros é criptografada automaticamente
+-   **Autenticação**: Laravel Fortify com 2FA
+-   **Autorização**: Middleware de admin para rotas protegidas
+-   **Sanitização**: Validação de inputs com Form Requests
+-   **CSRF Protection**: Proteção CSRF em todas as rotas
+-   **SQL Injection**: Protegido pelo Eloquent ORM
+-   **XSS Protection**: Blade templates escapam automaticamente
 
 ## 📝 Observações Importantes
 
 ### Limites e Regras de Negócio
 
-- **Máximo de 3 requisições ativas** por usuário
-- **Usuários com multas pendentes** não podem fazer novas requisições
-- **Multas calculadas automaticamente**:
-  - €1,00 por dia de atraso
-  - €5,00 por dano
-  - Valor do livro se perdido
-- **Avaliações moderadas** antes de serem exibidas publicamente
+-   **Máximo de 3 requisições ativas** por usuário
+-   **Usuários com multas pendentes** não podem fazer novas requisições
+-   **Multas calculadas automaticamente**:
+    -   €1,00 por dia de atraso
+    -   €5,00 por dano
+    -   Valor do livro se perdido
+-   **Avaliações moderadas** antes de serem exibidas publicamente
 
 ### Observers Implementados
 
-- **BookObserver**: Logs de criação/atualização de livros
-- **AuthorObserver**: Logs de criação/atualização de autores
-- **PublisherObserver**: Logs de criação/atualização de editoras
-- **BookRequestObserver**: Notificações e logs de requisições
-- **OrderObserver**: Processamento de pedidos
+-   **BookObserver**: Logs de criação/atualização de livros
+-   **AuthorObserver**: Logs de criação/atualização de autores
+-   **PublisherObserver**: Logs de criação/atualização de editoras
+-   **BookRequestObserver**: Notificações e logs de requisições
+-   **OrderObserver**: Processamento de pedidos
 
 ## 🤝 Contribuindo
 
@@ -533,16 +538,18 @@ php artisan test --filter BookRequestTest
 
 Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
 
-## 👨‍💻 Desenvolvido por
+## ⭐ Star History
 
-**InovCorp**
+Se este projeto foi útil para você, considere dar uma ⭐!
 
----
-
-## 📞 Suporte
-
-Para suporte, envie um email para suporte@inovcorp.com ou abra uma issue no repositório.
+[![Star History Chart](https://api.star-history.com/svg?repos=your-company/book-store&type=Date)](https://star-history.com/#your-company/book-storet&Date)
 
 ---
 
-**⭐ Se este projeto foi útil para você, considere dar uma estrela!**
+<div align="center">
+
+**Desenvolvido com ❤️ por Andersson Hupp**
+
+[⬆ Voltar ao topo](#-bookstore)
+
+</div>
